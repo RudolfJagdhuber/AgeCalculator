@@ -44,6 +44,7 @@
     <string name="thanks">Thank You! :-)</string>
     <string name="thanks_desc">You are currently using the Pro Version of this App. Thank you very much for your support!</string>
     <string name="pro_badge" translatable="false">PRO</string>
+    <string name="pro_package" translatable="false">de.datavisions.agecalculator.pro</string>
 
 
 </resources>

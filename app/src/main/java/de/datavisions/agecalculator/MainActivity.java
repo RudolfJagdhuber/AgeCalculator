@@ -28,9 +28,7 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static final boolean IS_PRO_VERSION = false;
-
-
+    boolean isProVersion;
     SharedPreferences sp;
     List<Person> personList;
 
@@ -40,11 +38,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         sp = PreferenceManager.getDefaultSharedPreferences(this);
+        isProVersion = getPackageName().equals(getString(R.string.pro_package));
 
         // Check if first start. I.e. no data entry exists in SharedPreferences. -> Create it.
         if (sp.getString("personList", null) == null) savePersonList(sp, new ArrayList<>());
 
-        findViewById(R.id.pro_badge).setVisibility(IS_PRO_VERSION ? View.VISIBLE : View.GONE);
+        findViewById(R.id.pro_badge).setVisibility(isProVersion ? View.VISIBLE : View.GONE);
 
         findViewById(R.id.impressum).setOnClickListener(view ->
                 startActivity(new Intent(this, Impressum.class)));
@@ -76,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
             for (Person p : personList) {
                 mixedList.add(p);
                 // add an Ad after every Card for non-pro users
-                if (!IS_PRO_VERSION) mixedList.add(new AdRequest.Builder().build());
+                if (!isProVersion) mixedList.add(new AdRequest.Builder().build());
             }
         }
         return mixedList;
