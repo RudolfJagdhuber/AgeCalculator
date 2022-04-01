@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_gravity="center_vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/applogo"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/applogo"
+        app:tint="@color/fgBlue"
+        app:layout_constraintEnd_toStartOf="@+id/appname"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/appname"
+        app:layout_constraintBottom_toBottomOf="@id/copyright"
+        android:contentDescription="@string/app_name" />
+
+    <TextView
+        android:id="@+id/appname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:letterSpacing="0.08"
+        android:text="@string/app_name"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/applogo"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/copyright"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:layout_marginStart="2dp"
+        android:letterSpacing="0.08"
+        android:text="@string/copyright"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="@+id/appname"
+        app:layout_constraintTop_toBottomOf="@id/appname"
+        tools:ignore="SmallSp" />
+
+
+    <TextView
+        android:id="@+id/pro_badge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="-10"
+        android:text="@string/pro_badge"
+        android:textColor="@color/fgBlue"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/appname"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.9" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

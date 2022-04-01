@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Alters-Rechner</string>
+    <string name="age_years">Alter in Jahren:</string>
+    <string name="age_months">Alter in Monaten:</string>
+    <string name="age_weeks">Alter in Wochen:</string>
+    <string name="age_days">Alter in Tagen:</string>
+    <string name="dob">Geb.:</string>
+    <string name="years">Jahre</string>
+    <string name="months">Monate</string>
+    <string name="weeks">Wochen</string>
+    <string name="days">Tage</string>
+    <string name="dummy_value">Beispieltext</string>
+    <string name="set_birthday">Datum wählen…</string>
+    <string name="save">Speichern</string>
+    <string name="select_img">Bild auswählen…</string>
+    <string name="chosen_date">Gewähltes Datum:</string>
+    <string name="new_person">Person hinzufügen</string>
+    <string name="name_title">Name der Person</string>
+    <string name="name_desc">Wählen Sie den Namen der auf der Karte dargestellt werden soll.</string>
+    <string name="date_title">Geburtsdatum</string>
+    <string name="date_desc">Wählen Sie das Geburtsdatum, aus welchem das Alter berechnet werden soll.</string>
+    <string name="picture_title">Bild (optional)</string>
+    <string name="picture_desc">Sie können zur Karte auch ein Bild hinzufügen.</string>
+    <string name="error_name">Der Name wird benötigt.</string>
+    <string name="error_dob">Fehler: Kein Geburtstag gewählt.</string>
+    <string name="uhr">Uhr</string>
+    <string name="error_read">Fehler: Zur Bildauswahl wird Dateilesezugriff benötigt</string>
+    <string name="edit_image">Bild Bearbeiten</string>
+    <string name="edit_person">Person bearbeiten</string>
+    <string name="intro">Noch keine Daten.\n\nFügen sie hier die erste Person hinzu.</string>
+    <string name="impressum">App Informationen</string>
+    <string name="creator">von Dr. Rudolf Jagdhuber</string>
+    <string name="libraries">Externe Ressourcen</string>
+    <string name="libraries_desc">Die App benutzt folgende externe Daten und Bibliotheken:</string>
+    <string name="pro">Ohne Werbung nutzen</string>
+    <string name="pro_desc">Ein Upgrage auf die Pro-Version entfernt die Werbung, schaltet das Widget frei und unterstützt mich als Programmierer.</string>
+    <string name="pro_btn">Zur Pro-Version</string>
+    <string name="thanks">Danke! :-)</string>
+    <string name="thanks_desc">Sie benutzen aktuell die Pro-Version der App. Vielen Dank für Ihre unterstützung!</string>
+</resources>

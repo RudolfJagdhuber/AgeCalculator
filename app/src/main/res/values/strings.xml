@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">AgeCalculator</string>
+
+
+    <!-- Item Person -->
+    <string name="dob">DoB:</string>
+    <string name="age_years">Age in years:</string>
+    <string name="age_months">Age in months:</string>
+    <string name="age_weeks">Age in weeks:</string>
+    <string name="age_days">Age in days:</string>
+    <string name="years">years</string>
+    <string name="months">months</string>
+    <string name="weeks">weeks</string>
+    <string name="days">days</string>
+    <string name="dummy_value">Dummy Value</string>
+    <string name="copyright" translatable="false">&#169; 2022 Data Visions</string>
+    <string name="set_birthday">Select Date…</string>
+    <string name="save">Save</string>
+    <string name="name" translatable="false">Name</string>
+    <string name="select_img">Select a Picture…</string>
+    <string name="chosen_date">Chosen Date:</string>
+    <string name="new_person">Add a new Person</string>
+    <string name="name_title">Name of Person</string>
+    <string name="name_desc">Select a name to be displayed in the person\'s card.</string>
+    <string name="date_title">Date of Birth</string>
+    <string name="date_desc">Choose the date of birth to calculate the current age from.</string>
+    <string name="picture_title">Picture (optional)</string>
+    <string name="picture_desc">You can select a picture to be displayed in the card.</string>
+    <string name="error_name">The name is required.</string>
+    <string name="error_dob">Error: No birthday entered.</string>
+    <string name="uhr" />
+    <string name="error_read">Error: The picture selection dialog needs file read access</string>
+    <string name="edit_image">Edit Picture</string>
+    <string name="edit_person">Edit Person</string>
+    <string name="intro">No data yet.\n\nClick here to add the first person.</string>
+    <string name="impressum">App Info</string>
+    <string name="info" translatable="false">App Version:</string>
+    <string name="creator">by Dr. Rudolf Jagdhuber</string>
+    <string name="libraries">External Resources</string>
+    <string name="libraries_desc">The app uses the following external data and libraries:</string>
+    <string name="pro">Remove Ads</string>
+    <string name="pro_desc">You can upgrade to the pro version to remove all ads, have additional features like the widget, and support me as a programmer.</string>
+    <string name="pro_btn">Get the Pro Version</string>
+    <string name="thanks">Thank You! :-)</string>
+    <string name="thanks_desc">You are currently using the Pro Version of this App. Thank you very much for your support!</string>
+    <string name="pro_badge" translatable="false">PRO</string>
+
+
+</resources>

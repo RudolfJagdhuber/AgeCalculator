@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="210dp"
+    android:layout_height="70dp"
+    android:background="@drawable/bg_box"
+    tools:ignore="SpUsage,HardcodedText">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/picture"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/no_img"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.LeftCorners" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="0dp"
+        android:layout_height="16dp"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginTop="2dp"
+        android:text="Rudolf Jagdhuber"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        android:textColor="@color/fgBlack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/picture"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/years"
+        android:layout_width="0dp"
+        android:layout_height="12dp"
+        android:layout_marginHorizontal="8dp"
+        android:text="ist  0.12 Jahre,"
+        android:textSize="9dp"
+        android:fontFamily="monospace"
+        android:textColor="@color/fgBlack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/picture"
+        app:layout_constraintTop_toBottomOf="@id/name" />
+
+    <TextView
+        android:id="@+id/months"
+        android:layout_width="0dp"
+        android:layout_height="12dp"
+        android:layout_marginHorizontal="8dp"
+        android:text="oder 2.12 Monate,"
+        android:textSize="9dp"
+        android:fontFamily="monospace"
+        android:textColor="@color/fgBlack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/picture"
+        app:layout_constraintTop_toBottomOf="@id/years" />
+
+    <TextView
+        android:id="@+id/weeks"
+        android:layout_width="0dp"
+        android:layout_height="12dp"
+        android:layout_marginHorizontal="8dp"
+        android:text="oder 12.12 Wochen,"
+        android:textSize="9dp"
+        android:fontFamily="monospace"
+        android:textColor="@color/fgBlack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/picture"
+        app:layout_constraintTop_toBottomOf="@id/months" />
+
+    <TextView
+        android:id="@+id/days"
+        android:layout_width="0dp"
+        android:layout_height="12dp"
+        android:layout_marginHorizontal="8dp"
+        android:text="oder 33424.12 Tage alt."
+        android:textSize="9dp"
+        android:fontFamily="monospace"
+        android:textColor="@color/fgBlack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/picture"
+        app:layout_constraintTop_toBottomOf="@id/weeks" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
