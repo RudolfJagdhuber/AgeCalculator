@@ -72,11 +72,9 @@ public class MainActivity extends AppCompatActivity {
     private List<Object> mixListWithAds() {
         List<Object> mixedList = new ArrayList<>();
         if (personList.size() > 0) {
-            for (Person p : personList) {
-                mixedList.add(p);
-                // add an Ad after every Card for non-pro users
-                if (!isProVersion) mixedList.add(new AdRequest.Builder().build());
-            }
+            mixedList.addAll(personList);
+            // add an Ad after the first Card for non-pro users
+            if (!isProVersion) mixedList.add(1, new AdRequest.Builder().build());
         }
         return mixedList;
     }
@@ -166,8 +164,13 @@ public class MainActivity extends AppCompatActivity {
                 ageWeeks = root.findViewById(R.id.weeks);
                 ageDays = root.findViewById(R.id.days);
                 root.findViewById(R.id.btn_edit).setOnClickListener(
-                        view -> startActivity(new Intent(MainActivity.this, EnterData.class)
-                                .putExtra("editID", getAdapterPosition())));
+                        view -> {
+                            int id = getAdapterPosition();
+                            // The second entry is an ad in the free version, all ids after it shift
+                            if (id > 1 && !isProVersion) id--;
+                            startActivity(new Intent(MainActivity.this, EnterData.class)
+                                    .putExtra("editID", id));
+                        });
             }
 
             void setDetails(Person p) {

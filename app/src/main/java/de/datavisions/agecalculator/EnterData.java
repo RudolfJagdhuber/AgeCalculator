@@ -109,7 +109,7 @@ public class EnterData extends AppCompatActivity {
 
 
     private void showDateTimePicker() {
-        final Calendar currentDate = Calendar.getInstance();
+        final Calendar currentDate = dob == null ? Calendar.getInstance() : dob;
         new DatePickerDialog(this, (view, year, monthOfYear, dayOfMonth) -> {
             dobView.setError(null);
             dob = Calendar.getInstance();

@@ -19,7 +19,7 @@
     <string name="name" translatable="false">Name</string>
     <string name="select_img">Select a Picture…</string>
     <string name="chosen_date">Chosen Date:</string>
-    <string name="new_person">Add a new Person</string>
+    <string name="new_person">Add a new Entry</string>
     <string name="name_title">Name of Person</string>
     <string name="name_desc">Select a name to be displayed in the person\'s card.</string>
     <string name="date_title">Date of Birth</string>
@@ -31,7 +31,7 @@
     <string name="uhr" />
     <string name="error_read">Error: The picture selection dialog needs file read access</string>
     <string name="edit_image">Edit Picture</string>
-    <string name="edit_person">Edit Person</string>
+    <string name="edit_person">Edit Entry</string>
     <string name="intro">No data yet.\n\nClick here to add the first person.</string>
     <string name="impressum">App Info</string>
     <string name="info" translatable="false">App Version:</string>
