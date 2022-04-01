@@ -51,7 +51,7 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.9.0'
 
     // ThreeTen backport to get java.time before API 26+
-    implementation 'com.jakewharton.threetenabp:threetenabp:1.2.1'
+    implementation 'org.threeten:threetenbp:1.6.0'
 
     // Default stuff
     implementation 'androidx.appcompat:appcompat:1.4.1'

@@ -23,28 +23,27 @@ import androidx.core.app.ActivityCompat;
 import com.google.android.material.imageview.ShapeableImageView;
 import com.yalantis.ucrop.UCrop;
 
+import org.threeten.bp.LocalDateTime;
+import org.threeten.bp.format.DateTimeFormatter;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.List;
-import java.util.Locale;
 import java.util.UUID;
 
 public class EnterData extends AppCompatActivity {
 
-    final DateFormat DATE = new SimpleDateFormat("dd.MM.yyyy", Locale.ENGLISH);
-    final DateFormat DATE_TIME = new SimpleDateFormat("dd.MM.yyyy  |  HH:mm", Locale.ENGLISH);
+    final DateTimeFormatter DATE = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+    final DateTimeFormatter DATE_TIME = DateTimeFormatter.ofPattern("dd.MM.yyyy  |  HH:mm");
 
     SharedPreferences sp;
     int editID;  // If we edit an existing entry, its id is passed. Else -1
 
     AutoCompleteTextView nameView;
 
-    Calendar dob = null;
+    LocalDateTime dob = null;
     TextView dobView;
 
     ShapeableImageView photoV;
@@ -85,7 +84,7 @@ public class EnterData extends AppCompatActivity {
             Person p = MainActivity.loadPersonList(sp).get(editID);
             nameView.setText(p.getName());
             dob = p.getDob();
-            dobView.setText(p.getDobString());
+            dobView.setText(p.getDobString(this));
             if (p.getPicture() != null) {
                 selectedPicture = p.getPicture();
                 photoV.setImageURI(null);
@@ -109,20 +108,17 @@ public class EnterData extends AppCompatActivity {
 
 
     private void showDateTimePicker() {
-        final Calendar currentDate = dob == null ? Calendar.getInstance() : dob;
+        final LocalDateTime currentDate = dob == null ? LocalDateTime.now() : dob;
         new DatePickerDialog(this, (view, year, monthOfYear, dayOfMonth) -> {
             dobView.setError(null);
-            dob = Calendar.getInstance();
-            dob.set(year, monthOfYear, dayOfMonth);
-            dobView.setText(DATE.format(dob.getTime()));
+            dob = LocalDateTime.of(year, monthOfYear + 1, dayOfMonth, 0, 0);
+            dobView.setText(DATE.format(dob));
             new TimePickerDialog(view.getContext(), (view1, hourOfDay, minute) -> {
-                dob.set(Calendar.HOUR_OF_DAY, hourOfDay);
-                dob.set(Calendar.MINUTE, minute);
-                dobView.setText(String.format("%s %s", DATE_TIME.format(dob.getTime()),
+                dob = LocalDateTime.of(year, monthOfYear + 1, dayOfMonth, hourOfDay, minute);
+                dobView.setText(String.format("%s %s", DATE_TIME.format(dob),
                         getString(R.string.uhr)));
             }, 0, 0, true).show();
-        }, currentDate.get(Calendar.YEAR), currentDate.get(Calendar.MONTH),
-                currentDate.get(Calendar.DATE)).show();
+        }, currentDate.getYear(), currentDate.getMonthValue() - 1, currentDate.getDayOfMonth()).show();
     }
 
 

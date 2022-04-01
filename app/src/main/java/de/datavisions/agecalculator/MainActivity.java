@@ -24,7 +24,6 @@ import com.google.gson.reflect.TypeToken;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -151,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         public class PersonViewHolder extends RecyclerView.ViewHolder{
-            public TextView name, dob, ageYears, ageMonths, ageWeeks, ageDays;
+            public TextView name, dob, ageFull, ageYears, ageMonths, ageWeeks, ageDays;
             public ShapeableImageView picture;
 
             public PersonViewHolder(LinearLayout root) {
@@ -159,6 +158,7 @@ public class MainActivity extends AppCompatActivity {
                 picture = root.findViewById(R.id.picture);
                 name = root.findViewById(R.id.name);
                 dob = root.findViewById(R.id.dob);
+                ageFull = root.findViewById(R.id.full_age);
                 ageYears = root.findViewById(R.id.years);
                 ageMonths = root.findViewById(R.id.months);
                 ageWeeks = root.findViewById(R.id.weeks);
@@ -179,15 +179,12 @@ public class MainActivity extends AppCompatActivity {
                     picture.setImageURI(p.getPicture());
                 } else picture.setImageResource(R.drawable.no_img);
                 name.setText(p.getName());
-                dob.setText(p.getDobString());
-                ageYears.setText(String.format(Locale.ENGLISH, "%.2f %s",
-                        p.getAgeInUnit(p.DATE_YEARS), getString(R.string.years)));
-                ageMonths.setText(String.format(Locale.ENGLISH, "%.2f %s",
-                        p.getAgeInUnit(p.DATE_MONTHS), getString(R.string.months)));
-                ageWeeks.setText(String.format(Locale.ENGLISH, "%.2f %s",
-                        p.getAgeInUnit(p.DATE_WEEKS), getString(R.string.weeks)));
-                ageDays.setText(String.format(Locale.ENGLISH, "%.2f %s",
-                        p.getAgeInUnit(p.DATE_DAYS), getString(R.string.days)));
+                dob.setText(p.getDobString(MainActivity.this));
+                ageFull.setText(p.getAgeInUnit(p.DATE_FULL, MainActivity.this));
+                ageYears.setText(p.getAgeInUnit(p.DATE_YEARS, MainActivity.this));
+                ageMonths.setText(p.getAgeInUnit(p.DATE_MONTHS, MainActivity.this));
+                ageWeeks.setText(p.getAgeInUnit(p.DATE_WEEKS, MainActivity.this));
+                ageDays.setText(p.getAgeInUnit(p.DATE_DAYS, MainActivity.this));
             }
 
         }

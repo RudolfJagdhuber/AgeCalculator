@@ -111,12 +111,26 @@
     </FrameLayout>
 
 
+    <TextView
+        android:id="@+id/full_age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingVertical="12dp"
+        android:background="@drawable/bg_box_mid"
+        android:textSize="14sp"
+        android:textColor="@color/fgBlue"
+        android:textStyle="bold"
+        />
+
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:paddingVertical="8dp"
+        android:paddingVertical="12dp"
         android:background="@drawable/bg_box_mid"
         >
 
@@ -127,18 +141,19 @@
             android:text="@string/age_years"
             android:textColor="@color/fgBlack"
             android:gravity="end"
-            android:textSize="16sp"
+            android:textSize="14sp"
             />
 
 
         <TextView
             android:id="@+id/years"
             android:layout_width="0dip"
-            android:layout_weight="1"
+            android:layout_weight="1.5"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:textSize="16sp"
+            android:layout_marginStart="15dp"
+            android:textSize="14sp"
             android:textStyle="bold"
+            android:textColor="@color/fgBlue"
             />
 
     </LinearLayout>
@@ -149,7 +164,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:paddingVertical="8dp"
+        android:paddingVertical="12dp"
         android:background="@drawable/bg_box_mid"
         >
 
@@ -160,18 +175,19 @@
             android:text="@string/age_months"
             android:gravity="end"
             android:textColor="@color/fgBlack"
-            android:textSize="16sp"
+            android:textSize="14sp"
             />
 
 
         <TextView
             android:id="@+id/months"
             android:layout_width="0dip"
-            android:layout_weight="1"
+            android:layout_weight="1.5"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:textSize="16sp"
+            android:layout_marginStart="15dp"
+            android:textSize="14sp"
             android:textStyle="bold"
+            android:textColor="@color/fgBlue"
             />
 
     </LinearLayout>
@@ -182,7 +198,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:paddingVertical="8dp"
+        android:paddingVertical="12dp"
         android:background="@drawable/bg_box_mid"
         >
 
@@ -193,18 +209,19 @@
             android:text="@string/age_weeks"
             android:gravity="end"
             android:textColor="@color/fgBlack"
-            android:textSize="16sp"
+            android:textSize="14sp"
             />
 
 
         <TextView
             android:id="@+id/weeks"
             android:layout_width="0dip"
-            android:layout_weight="1"
+            android:layout_weight="1.5"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textStyle="bold"
+            android:textColor="@color/fgBlue"
             />
 
     </LinearLayout>
@@ -214,7 +231,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:paddingVertical="8dp"
+        android:paddingVertical="12dp"
         android:background="@drawable/bg_box_bottom"
         >
 
@@ -225,18 +242,19 @@
             android:text="@string/age_days"
             android:gravity="end"
             android:textColor="@color/fgBlack"
-            android:textSize="16sp"
+            android:textSize="14sp"
             />
 
 
         <TextView
             android:id="@+id/days"
             android:layout_width="0dip"
-            android:layout_weight="1"
+            android:layout_weight="1.5"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textStyle="bold"
+            android:textColor="@color/fgBlue"
             />
 
     </LinearLayout>

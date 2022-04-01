@@ -22,8 +22,8 @@
     <string name="new_person">Add a new Entry</string>
     <string name="name_title">Name of Person</string>
     <string name="name_desc">Select a name to be displayed in the person\'s card.</string>
-    <string name="date_title">Date of Birth</string>
-    <string name="date_desc">Choose the date of birth to calculate the current age from.</string>
+    <string name="date_title">Date</string>
+    <string name="date_desc">Choose the date to calculate the current age from.</string>
     <string name="picture_title">Picture (optional)</string>
     <string name="picture_desc">You can select a picture to be displayed in the card.</string>
     <string name="error_name">The name is required.</string>
@@ -45,6 +45,8 @@
     <string name="thanks_desc">You are currently using the Pro Version of this App. Thank you very much for your support!</string>
     <string name="pro_badge" translatable="false">PRO</string>
     <string name="pro_package" translatable="false">de.datavisions.agecalculator.pro</string>
+    <string name="month">month</string>
+    <string name="year">year</string>
 
 
 </resources>

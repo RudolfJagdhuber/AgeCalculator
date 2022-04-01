@@ -18,8 +18,8 @@
     <string name="new_person">Eintrag hinzufügen</string>
     <string name="name_title">Name der Person</string>
     <string name="name_desc">Wählen Sie den Namen der auf der Karte dargestellt werden soll.</string>
-    <string name="date_title">Geburtsdatum</string>
-    <string name="date_desc">Wählen Sie das Geburtsdatum, aus welchem das Alter berechnet werden soll.</string>
+    <string name="date_title">Datum</string>
+    <string name="date_desc">Wählen Sie das Datum, aus welchem das Alter berechnet werden soll.</string>
     <string name="picture_title">Bild (optional)</string>
     <string name="picture_desc">Sie können zur Karte auch ein Bild hinzufügen.</string>
     <string name="error_name">Der Name wird benötigt.</string>
@@ -38,4 +38,6 @@
     <string name="pro_btn">Zur Pro-Version</string>
     <string name="thanks">Danke! :-)</string>
     <string name="thanks_desc">Sie benutzen aktuell die Pro-Version der App. Vielen Dank für Ihre unterstützung!</string>
+    <string name="month">Monat</string>
+    <string name="year">Jahr</string>
 </resources>
