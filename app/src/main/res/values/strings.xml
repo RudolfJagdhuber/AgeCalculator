@@ -47,6 +47,7 @@
     <string name="pro_package" translatable="false">de.datavisions.agecalculator.pro</string>
     <string name="month">month</string>
     <string name="year">year</string>
+    <string name="week">week</string>
 
 
 </resources>

@@ -1,16 +1,14 @@
 package de.datavisions.agecalculator;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.net.Uri;
 
 import org.threeten.bp.LocalDateTime;
-import org.threeten.bp.format.DateTimeFormatter;
 import org.threeten.bp.Period;
+import org.threeten.bp.format.DateTimeFormatter;
 import org.threeten.bp.temporal.ChronoUnit;
 
 import java.io.Serializable;
-import java.util.Calendar;
 import java.util.Locale;
 
 public class Person implements Serializable {
@@ -22,8 +20,9 @@ public class Person implements Serializable {
     public final int DATE_FULL = 4;
 
     private String name;
-    private LocalDateTime dob;
+    private final LocalDateTime dob;
     private String picturePath;  // Treated as Uri, only stored as String for gson compatibility
+
 
     public Person(String name, LocalDateTime dob, Uri picture) {
         this.name = name;
@@ -31,34 +30,42 @@ public class Person implements Serializable {
         this.picturePath = picture == null ? null : picture.toString();
     }
 
+
     public Person(String name, LocalDateTime dob) {
         this.name = name;
         this.dob = dob;
     }
 
+
     public String getName() {
         return name;
     }
+
 
     public void setName(String name) {
         this.name = name;
     }
 
+
     public LocalDateTime getDob() {
         return dob;
     }
 
-    public void setDob(LocalDateTime dob) {
-        this.dob = dob;
-    }
+
+//    public void setDob(LocalDateTime dob) {
+//        this.dob = dob;
+//    }
+
 
     public Uri getPicture() {
         return picturePath == null ? null : Uri.parse(picturePath);
     }
 
-    public void setPicture(Uri picture) {
-        this.picturePath = picture == null ? null : picture.toString();
-    }
+
+//    public void setPicture(Uri picture) {
+//        this.picturePath = picture == null ? null : picture.toString();
+//    }
+
 
     public String getDobString(Context ctx) {
         return String.format("%s %s",
@@ -69,7 +76,7 @@ public class Person implements Serializable {
 
     public String getAgeInUnit(int unit, Context ctx) {
 
-        long year, month;
+        long year, month, week;
         double remainderDays;
 
         LocalDateTime now = LocalDateTime.now();
@@ -82,9 +89,12 @@ public class Person implements Serializable {
                 return String.format(Locale.ENGLISH, "%.2f %s", exactDays,
                         ctx.getString(R.string.days));
             case DATE_WEEKS:
-                return String.format(Locale.ENGLISH, "%.2f %s",
-                        (double) Math.round(100 * exactDays / 7) / 100,
-                        ctx.getString(R.string.weeks));
+                week = (long) Math.floor(exactDays / 7);
+                remainderDays = (period.getDays() % 7) - 1 + exactDays - Math.floor(exactDays);
+                return String.format(Locale.ENGLISH, "%d %s  |  %.2f %s",
+                        week, ctx.getString(week == 1 ? R.string.week : R.string.weeks),
+                        (double) Math.round(100 * remainderDays) / 100,
+                        ctx.getString(R.string.days));
             case DATE_MONTHS:
                 remainderDays = period.getDays() - 1 + exactDays - Math.floor(exactDays);
                 month = ChronoUnit.MONTHS.between(dob, now);
@@ -109,7 +119,4 @@ public class Person implements Serializable {
                 return "";
         }
     }
-
-
-
 }
