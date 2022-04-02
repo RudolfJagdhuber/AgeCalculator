@@ -48,6 +48,12 @@
     <string name="month">month</string>
     <string name="year">year</string>
     <string name="week">week</string>
+    <string name="widget_desc">Widget to display a single entry</string>
+    <string name="next_desc">Change widget data to the next person</string>
+    <string name="error_loading">Error loading data</string>
+    <string name="na">Not Available</string>
+    <string name="widget_pro">Requires Pro Version</string>
+    <string name="no_data">No person found</string>
 
 
 </resources>

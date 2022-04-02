@@ -41,4 +41,10 @@
     <string name="month">Monat</string>
     <string name="year">Jahr</string>
     <string name="week">Woche</string>
+    <string name="widget_desc">Widget eines Eintrags</string>
+    <string name="next_desc">Wähle die nächste Person für das Widget</string>
+    <string name="error_loading">Fehler beim Laden</string>
+    <string name="na">Nicht Verfügbar</string>
+    <string name="widget_pro">Benötigt Pro Version</string>
+    <string name="no_data">Keine Person gefunden</string>
 </resources>

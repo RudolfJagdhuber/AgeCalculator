@@ -45,7 +45,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:text="@string/dummy_value"
+                    android:text="@string/error_loading"
                     android:textColor="@color/fgBlack"
                     android:textSize="20sp"
                     android:textStyle="bold"
@@ -75,6 +75,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="14sp"
                         android:textStyle="bold"
+                        android:text="@string/error_loading"
                         />
 
 
@@ -121,6 +122,7 @@
         android:textSize="14sp"
         android:textColor="@color/fgBlue"
         android:textStyle="bold"
+        android:text="@string/error_loading"
         />
 
 
@@ -154,6 +156,7 @@
             android:textSize="14sp"
             android:textStyle="bold"
             android:textColor="@color/fgBlue"
+            android:text="@string/error_loading"
             />
 
     </LinearLayout>
@@ -188,6 +191,7 @@
             android:textSize="14sp"
             android:textStyle="bold"
             android:textColor="@color/fgBlue"
+            android:text="@string/error_loading"
             />
 
     </LinearLayout>
@@ -222,6 +226,7 @@
             android:textSize="14sp"
             android:textStyle="bold"
             android:textColor="@color/fgBlue"
+            android:text="@string/error_loading"
             />
 
     </LinearLayout>
@@ -255,6 +260,7 @@
             android:textSize="14sp"
             android:textStyle="bold"
             android:textColor="@color/fgBlue"
+            android:text="@string/error_loading"
             />
 
     </LinearLayout>

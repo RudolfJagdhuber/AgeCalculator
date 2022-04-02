@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, EnterData.class)));
 
         // Ads by Google
-        MobileAds.initialize(this, initializationStatus -> {});
+        if(!isProVersion) MobileAds.initialize(this, initializationStatus -> {});
 
     }
 
@@ -81,8 +81,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     public static List<Person> loadPersonList(SharedPreferences sp) {
-        return new Gson().fromJson(sp.getString("personList", null),
-                new TypeToken<ArrayList<Person>>(){}.getType());
+        return sp.contains("personList") ? new Gson().fromJson(sp.getString("personList", null),
+                new TypeToken<ArrayList<Person>>(){}.getType())
+                : new ArrayList<>();
     }
 
 

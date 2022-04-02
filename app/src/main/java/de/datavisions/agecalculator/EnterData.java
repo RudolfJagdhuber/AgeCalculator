@@ -4,6 +4,7 @@ import android.Manifest;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.appwidget.AppWidgetManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -21,6 +22,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import com.google.android.material.imageview.ShapeableImageView;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.yalantis.ucrop.UCrop;
 
 import org.threeten.bp.LocalDateTime;
@@ -30,6 +33,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 
@@ -163,14 +167,47 @@ public class EnterData extends AppCompatActivity {
         if (editID == -1) personList.add(new Person(name, dob, selectedPicture));
         else personList.set(editID, new Person(name, dob, selectedPicture));
         MainActivity.savePersonList(sp, personList);
+
+        // Special case: If it is the first entry, and one or more empty widgets are waiting with no
+        // data, call the update function for it to be refreshed with this newly created entry.
+        // Of course, also update all widgets if an existing data entry was changed.
+        if (personList.size() == 1 || editID != -1) {
+            HashMap<Integer, Integer> widgetMap = new Gson().fromJson(sp.getString("widgetMap",
+                    "{}"), new TypeToken<HashMap<Integer, Integer>>(){}.getType());
+            for (int key : widgetMap.keySet()) {
+                SinglePersonWidget.updateAppWidget(this, AppWidgetManager.getInstance(this), key);
+            }
+        }
         finish();
     }
 
 
     private void deleteEntry() {
+        if (editID == -1) return;
         List<Person> personList = MainActivity.loadPersonList(sp);
-        if (editID != -1) personList.remove(editID);
+        personList.remove(editID);
         MainActivity.savePersonList(sp, personList);
+        // Update affected widgets
+        HashMap<Integer, Integer> widgetMap = new Gson().fromJson(sp.getString("widgetMap", "{}"),
+                new TypeToken<HashMap<Integer, Integer>>(){}.getType());
+        for (int key : widgetMap.keySet()) {
+            int personID = widgetMap.get(key);
+            // Problem only if the removed entry is below or equal to the widget entry
+            if (editID <= personID) {
+                // If the widget refers to a number > 0, reduce it by one to adjust for the shift,
+                // or if it was the one to be removed, to at least select a different valid one.
+                if (personID > 0) widgetMap.put(key, personID - 1);
+                // if it is 0 itself (and was removed itself), either a new value 0 be there now, or
+                // if there is no value left, the value can stay zero and the widget will catch it.
+                // Once there is a new entry there, the widget can be refreshed, and refers to this
+                // new 0 element directly.
+
+                // Save the changes
+                sp.edit().putString("widgetMap", new Gson().toJson(widgetMap)).apply();
+                // Update the widget
+                SinglePersonWidget.updateAppWidget(this, AppWidgetManager.getInstance(this), key);
+            }
+        }
         finish();
     }
 
@@ -209,7 +246,7 @@ public class EnterData extends AppCompatActivity {
                     UCrop uCrop = UCrop.of(result.getData().getData(),
                             Uri.fromFile(new File(getCacheDir(), uniqueFilename)))
                             .withAspectRatio(1, 1)
-                            .withMaxResultSize(1024, 1024)
+                            .withMaxResultSize(512, 512)
                             .withOptions(options);
                     cropResultLauncher.launch(uCrop.getIntent(this));
                 }

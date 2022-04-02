@@ -1,0 +1,155 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="0dp"
+    android:gravity="center"
+    android:background="@drawable/app_widget_background"
+    android:backgroundTint="@color/bgWhite"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/picture"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/no_img"
+        android:contentDescription="@string/picture_desc" />
+
+    <LinearLayout
+        android:layout_width="0dip"
+        android:layout_height="90dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        tools:ignore="SpUsage">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginTop="4dp">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="0dip"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:text="@string/error_loading"
+                android:textColor="@color/fgBlack"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/btn_change_person"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:src="@drawable/ic_next_person"
+                android:tint="@color/fgBlack"
+                tools:ignore="UseAppTint"
+                android:contentDescription="@string/next_desc" />
+
+
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="8dp"
+            android:baselineAligned="false">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp"
+                    android:text="@string/age_years"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textSize="11dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp"
+                    android:text="@string/age_months"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textSize="11dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp"
+                    android:text="@string/age_weeks"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textSize="11dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp"
+                    android:text="@string/age_days"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textSize="11dp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="8dp">
+
+                <TextView
+                    android:id="@+id/years"
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:text="@string/error_loading"
+                    android:textColor="@color/fgBlue"
+                    android:textStyle="bold"
+                    android:textSize="11dp" />
+
+                <TextView
+                    android:id="@+id/months"
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:text="@string/error_loading"
+                    android:textColor="@color/fgBlue"
+                    android:textStyle="bold"
+                    android:textSize="11dp" />
+
+                <TextView
+                    android:id="@+id/weeks"
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:text="@string/error_loading"
+                    android:textColor="@color/fgBlue"
+                    android:textStyle="bold"
+                    android:textSize="11dp" />
+
+                <TextView
+                    android:id="@+id/days"
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:text="@string/error_loading"
+                    android:textColor="@color/fgBlue"
+                    android:textStyle="bold"
+                    android:textSize="11dp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
