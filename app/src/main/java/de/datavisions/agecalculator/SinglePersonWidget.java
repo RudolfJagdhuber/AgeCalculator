@@ -4,10 +4,12 @@ import android.annotation.SuppressLint;
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
+import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.widget.RemoteViews;
@@ -90,6 +92,7 @@ public class SinglePersonWidget extends AppWidgetProvider {
         rv.setTextViewText(R.id.days, p.getAgeInUnit(p.DATE_DAYS, context));
         rv.setOnClickPendingIntent(R.id.btn_change_person, PendingIntent.getBroadcast(context, 0,
                 new Intent(context, SinglePersonWidget.class).setAction("next")
+                        .setData(ContentUris.withAppendedId(Uri.EMPTY, appWidgetId))
                         .putExtra("appWidgetId", appWidgetId),
                 PendingIntent.FLAG_UPDATE_CURRENT));
 
