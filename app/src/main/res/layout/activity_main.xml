@@ -20,22 +20,18 @@
         app:liftOnScroll="true"
         >
 
-        <LinearLayout
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <include layout="@layout/logo"/>
-
-            <View
-                android:layout_width="0dip"
-                android:layout_height="10dp"
-                android:layout_weight="1"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/impressum"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="8dp"
+                android:backgroundTint="@color/bgWhite"
                 style="@style/Widget.MaterialComponents.Button.TextButton"
                 android:insetLeft="0dp"
                 android:insetTop="0dp"
@@ -43,10 +39,11 @@
                 android:insetBottom="0dp"
                 app:icon="@drawable/ic_info"
                 app:iconTint="@color/fgBlue"
+                android:layout_gravity="end"
                 />
 
 
-        </LinearLayout>
+        </FrameLayout>
 
 
 
@@ -85,6 +82,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="32sp"
                 android:gravity="center"
+                android:textColor="@color/fgGray0"
                 android:text="@string/intro"/>
 
 

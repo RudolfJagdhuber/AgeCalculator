@@ -22,12 +22,13 @@
 
     <TextView
         android:id="@+id/appname"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:fontFamily="sans-serif-condensed-medium"
-        android:letterSpacing="0.08"
+        android:letterSpacing="0.06"
         android:text="@string/app_name"
+        android:textColor="@color/fgGray0"
         android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/applogo"
@@ -40,6 +41,7 @@
         android:fontFamily="monospace"
         android:layout_marginStart="2dp"
         android:letterSpacing="0.08"
+        android:textColor="@color/fgGray0"
         android:text="@string/copyright"
         android:textSize="10sp"
         app:layout_constraintStart_toStartOf="@+id/appname"
@@ -57,9 +59,11 @@
         android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/appname"
+        app:layout_constraintEnd_toEndOf="@+id/appname"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toEndOf="@+id/copyright"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.9" />
+        app:layout_constraintVertical_bias="0.95" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

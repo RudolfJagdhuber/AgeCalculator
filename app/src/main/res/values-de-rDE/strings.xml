@@ -15,7 +15,7 @@
     <string name="save">Speichern</string>
     <string name="select_img">Bild auswählen…</string>
     <string name="chosen_date">Gewähltes Datum:</string>
-    <string name="new_person">Eintrag hinzufügen</string>
+    <string name="new_person">Hinzufügen</string>
     <string name="name_title">Name der Person</string>
     <string name="name_desc">Wählen Sie den Namen der auf der Karte dargestellt werden soll.</string>
     <string name="date_title">Datum</string>
@@ -27,9 +27,9 @@
     <string name="uhr">Uhr</string>
     <string name="error_read">Fehler: Zur Bildauswahl wird Dateilesezugriff benötigt</string>
     <string name="edit_image">Bild Bearbeiten</string>
-    <string name="edit_person">Eintrag bearbeiten</string>
+    <string name="edit_person">Bearbeiten</string>
     <string name="intro">Noch keine Daten.\n\nFügen sie hier die erste Person hinzu.</string>
-    <string name="impressum">App Informationen</string>
+    <string name="impressum">Informationen</string>
     <string name="creator">von Dr. Rudolf Jagdhuber</string>
     <string name="libraries">Externe Ressourcen</string>
     <string name="libraries_desc">Die App benutzt folgende externe Daten und Bibliotheken:</string>

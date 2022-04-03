@@ -13,21 +13,22 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="wrap_content"
+            android:minHeight="80dp"
             android:background="@drawable/bg_box_top"
             >
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/picture"
                 android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_height="match_parent"
                 android:src="@drawable/no_img"
-
+                android:background="@color/fgBlue"
                 app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.TopLeftCorner" />
 
             <LinearLayout
@@ -118,6 +119,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:paddingVertical="12dp"
+        android:paddingHorizontal="8dp"
         android:background="@drawable/bg_box_mid"
         android:textSize="14sp"
         android:textColor="@color/fgBlue"
@@ -133,6 +135,7 @@
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:paddingVertical="12dp"
+        android:paddingHorizontal="8dp"
         android:background="@drawable/bg_box_mid"
         >
 
@@ -141,7 +144,7 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="@string/age_years"
-            android:textColor="@color/fgBlack"
+            android:textColor="@color/fgGray0"
             android:gravity="end"
             android:textSize="14sp"
             />
@@ -168,6 +171,7 @@
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:paddingVertical="12dp"
+        android:paddingHorizontal="8dp"
         android:background="@drawable/bg_box_mid"
         >
 
@@ -176,8 +180,8 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="@string/age_months"
+            android:textColor="@color/fgGray0"
             android:gravity="end"
-            android:textColor="@color/fgBlack"
             android:textSize="14sp"
             />
 
@@ -203,6 +207,7 @@
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:paddingVertical="12dp"
+        android:paddingHorizontal="8dp"
         android:background="@drawable/bg_box_mid"
         >
 
@@ -211,8 +216,8 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="@string/age_weeks"
+            android:textColor="@color/fgGray0"
             android:gravity="end"
-            android:textColor="@color/fgBlack"
             android:textSize="14sp"
             />
 
@@ -237,6 +242,7 @@
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:paddingVertical="12dp"
+        android:paddingHorizontal="8dp"
         android:background="@drawable/bg_box_bottom"
         >
 
@@ -245,8 +251,8 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="@string/age_days"
+            android:textColor="@color/fgGray0"
             android:gravity="end"
-            android:textColor="@color/fgBlack"
             android:textSize="14sp"
             />
 

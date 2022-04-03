@@ -4,7 +4,6 @@ import android.content.Context;
 import android.net.Uri;
 
 import org.threeten.bp.LocalDateTime;
-import org.threeten.bp.Period;
 import org.threeten.bp.format.DateTimeFormatter;
 import org.threeten.bp.temporal.ChronoUnit;
 
@@ -52,19 +51,9 @@ public class Person implements Serializable {
     }
 
 
-//    public void setDob(LocalDateTime dob) {
-//        this.dob = dob;
-//    }
-
-
     public Uri getPicture() {
         return picturePath == null ? null : Uri.parse(picturePath);
     }
-
-
-//    public void setPicture(Uri picture) {
-//        this.picturePath = picture == null ? null : picture.toString();
-//    }
 
 
     public String getDobString(Context ctx) {
@@ -90,7 +79,6 @@ public class Person implements Serializable {
         // Get datetime after months were taken. Compute remainder days from that day on
         double remainderDays = exactDays -
                 ChronoUnit.DAYS.between(dob, ChronoUnit.MONTHS.addTo(dob, months));
-
 
         switch (unit) {
             case DATE_DAYS:
@@ -119,7 +107,7 @@ public class Person implements Serializable {
     }
 
     // round to two digits
-    private static double round2(double number) {
+    public static double round2(double number) {
         return (double) Math.round(100 * number) / 100;
     }
 
