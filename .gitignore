@@ -8,3 +8,5 @@
 .externalNativeBuild
 .cxx
 local.properties
+/app/free/release/app-free-release.aab
+/app/pro/release/app-pro-release.aab
