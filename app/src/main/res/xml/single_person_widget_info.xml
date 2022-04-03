@@ -4,7 +4,7 @@
     android:description="@string/widget_desc"
     android:initialKeyguardLayout="@layout/single_person_widget"
     android:initialLayout="@layout/single_person_widget"
-    android:minWidth="300dp"
+    android:minWidth="250dp"
     android:minHeight="40dp"
     android:previewImage="@drawable/example_appwidget_preview"
     android:previewLayout="@layout/single_person_widget"

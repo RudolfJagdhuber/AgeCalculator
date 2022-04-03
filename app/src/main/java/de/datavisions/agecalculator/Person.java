@@ -76,47 +76,51 @@ public class Person implements Serializable {
 
     public String getAgeInUnit(int unit, Context ctx) {
 
-        long year, month, week;
-        double remainderDays;
-
         LocalDateTime now = LocalDateTime.now();
-        Period period = Period.between(dob.toLocalDate(), now.toLocalDate());
-
         double exactDays = (double) ChronoUnit.MINUTES.between(dob, now) / (60 * 24);
+
+        // Total amount of weeks, months, years
+        long weeks = (long) Math.floor(exactDays / 7);
+        long months = ChronoUnit.MONTHS.between(dob, now);
+        long years = ChronoUnit.YEARS.between(dob, now);
+
+        // Remainders after taken the "bigger" unit away (Years > Months > Days)
+        long remainderMonths = months - years * 12;
+        double remainderWeekDays = exactDays - weeks * 7;
+        // Get datetime after months were taken. Compute remainder days from that day on
+        double remainderDays = exactDays -
+                ChronoUnit.DAYS.between(dob, ChronoUnit.MONTHS.addTo(dob, months));
+
 
         switch (unit) {
             case DATE_DAYS:
                 return String.format(Locale.ENGLISH, "%.2f %s", exactDays,
                         ctx.getString(R.string.days));
             case DATE_WEEKS:
-                week = (long) Math.floor(exactDays / 7);
-                remainderDays = (period.getDays() % 7) - 1 + exactDays - Math.floor(exactDays);
                 return String.format(Locale.ENGLISH, "%d %s  |  %.2f %s",
-                        week, ctx.getString(week == 1 ? R.string.week : R.string.weeks),
-                        (double) Math.round(100 * remainderDays) / 100,
-                        ctx.getString(R.string.days));
+                        weeks, ctx.getString(weeks == 1 ? R.string.week : R.string.weeks),
+                        round2(remainderWeekDays), ctx.getString(R.string.days));
             case DATE_MONTHS:
-                remainderDays = period.getDays() - 1 + exactDays - Math.floor(exactDays);
-                month = ChronoUnit.MONTHS.between(dob, now);
-                return String.format(Locale.ENGLISH, "%d %s  |  %.2f %s", month,
-                        ctx.getString(month == 1 ? R.string.month : R.string.months),
-                        (double) Math.round(100 * remainderDays) / 100,
-                        ctx.getString(R.string.days));
+                return String.format(Locale.ENGLISH, "%d %s  |  %.2f %s", months,
+                        ctx.getString(months == 1 ? R.string.month : R.string.months),
+                        round2(remainderDays), ctx.getString(R.string.days));
             case DATE_YEARS:
-                return String.format(Locale.ENGLISH, "%.2f %s",
-                        (double) Math.round(100 * exactDays / 365) / 100,
+                return String.format(Locale.ENGLISH, "%.2f %s", round2(exactDays / 365),
                         ctx.getString(R.string.years));
             case DATE_FULL:
-                remainderDays = period.getDays() - 1 + exactDays - Math.floor(exactDays);
-                year = period.getYears();
-                month = period.getMonths();
                 return String.format(Locale.ENGLISH, "%d %s  |  %d %s  |  %.2f %s",
-                        year, ctx.getString(year == 1 ? R.string.year : R.string.years),
-                        month, ctx.getString(month == 1 ? R.string.month : R.string.months),
-                        (double) Math.round(100 * remainderDays) / 100,
-                        ctx.getString(R.string.days));
+                        years, ctx.getString(years == 1 ? R.string.year : R.string.years),
+                        remainderMonths, ctx.getString(remainderMonths == 1 ? R.string.month
+                                : R.string.months),
+                        round2(remainderDays), ctx.getString(R.string.days));
             default:
                 return "";
         }
     }
+
+    // round to two digits
+    private static double round2(double number) {
+        return (double) Math.round(100 * number) / 100;
+    }
+
 }

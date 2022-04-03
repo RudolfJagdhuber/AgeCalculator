@@ -90,7 +90,8 @@ public class SinglePersonWidget extends AppWidgetProvider {
         rv.setTextViewText(R.id.days, p.getAgeInUnit(p.DATE_DAYS, context));
         rv.setOnClickPendingIntent(R.id.btn_change_person, PendingIntent.getBroadcast(context, 0,
                 new Intent(context, SinglePersonWidget.class).setAction("next")
-                        .putExtra("appWidgetId", appWidgetId), 0));
+                        .putExtra("appWidgetId", appWidgetId),
+                PendingIntent.FLAG_UPDATE_CURRENT));
 
         // Instruct the widget manager to update the widget
         appWidgetManager.updateAppWidget(appWidgetId, rv);
