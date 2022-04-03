@@ -47,4 +47,5 @@
     <string name="na">Nicht Verfügbar</string>
     <string name="widget_pro">Benötigt Pro Version</string>
     <string name="no_data">Keine Person gefunden</string>
+    <string name="app_name_pro">Alters-Rechner PRO</string>
 </resources>
