@@ -17,7 +17,7 @@
     <style name="ShapeAppearanceOverlay.App.TopLeftCorner" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">0dp</item>
-        <item name="cornerSizeTopLeft">8dp</item>
+        <item name="cornerSizeTopLeft">13%</item>
     </style>
 
     <style name="ShapeAppearanceOverlay.App.LeftCorners" parent="">

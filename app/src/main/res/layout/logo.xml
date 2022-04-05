@@ -18,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/appname"
         app:layout_constraintBottom_toBottomOf="@id/copyright"
-        android:contentDescription="@string/app_name" />
+        android:contentDescription="@string/app_title" />
 
     <TextView
         android:id="@+id/appname"
@@ -27,7 +27,7 @@
         android:layout_marginStart="4dp"
         android:fontFamily="sans-serif-condensed-medium"
         android:letterSpacing="0.06"
-        android:text="@string/app_name"
+        android:text="@string/app_title"
         android:textColor="@color/fgGray0"
         android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"

@@ -28,7 +28,8 @@
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:src="@drawable/no_img"
-                android:background="@color/fgBlue"
+                android:layout_marginTop="-1dp"
+                android:background="@color/fgGray3"
                 app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.TopLeftCorner" />
 
             <LinearLayout

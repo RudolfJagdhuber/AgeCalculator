@@ -34,7 +34,7 @@
             <TextView
                 android:id="@+id/name"
                 android:layout_width="0dip"
-                android:layout_height="20dp"
+                android:layout_height="18dp"
                 android:layout_weight="1"
                 android:text="@string/error_loading"
                 android:textColor="@color/fgBlack"
@@ -62,7 +62,7 @@
             android:layout_width="match_parent"
             android:layout_height="52dp"
             android:orientation="horizontal"
-            android:layout_marginHorizontal="8dp"
+            android:layout_marginStart="8dp"
             android:baselineAligned="false">
 
             <LinearLayout
@@ -77,7 +77,7 @@
                     android:text="@string/age_years"
                     android:textColor="@color/fgGray0"
                     android:fontFamily="sans-serif-condensed"
-                    android:textSize="10dp" />
+                    android:textSize="9dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -85,7 +85,7 @@
                     android:text="@string/age_months"
                     android:textColor="@color/fgGray0"
                     android:fontFamily="sans-serif-condensed"
-                    android:textSize="10dp" />
+                    android:textSize="9dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -93,7 +93,7 @@
                     android:text="@string/age_weeks"
                     android:textColor="@color/fgGray0"
                     android:fontFamily="sans-serif-condensed"
-                    android:textSize="10dp" />
+                    android:textSize="9dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -101,7 +101,7 @@
                     android:text="@string/age_days"
                     android:textColor="@color/fgGray0"
                     android:fontFamily="sans-serif-condensed"
-                    android:textSize="10dp" />
+                    android:textSize="9dp" />
 
             </LinearLayout>
 
@@ -121,7 +121,7 @@
                     android:fontFamily="sans-serif-condensed"
                     android:textColor="@color/fgBlue"
                     android:textStyle="bold"
-                    android:textSize="10dp" />
+                    android:textSize="9dp" />
 
                 <TextView
                     android:id="@+id/months"
@@ -131,7 +131,7 @@
                     android:fontFamily="sans-serif-condensed"
                     android:textColor="@color/fgBlue"
                     android:textStyle="bold"
-                    android:textSize="10dp" />
+                    android:textSize="9dp" />
 
                 <TextView
                     android:id="@+id/weeks"
@@ -141,7 +141,7 @@
                     android:fontFamily="sans-serif-condensed"
                     android:textColor="@color/fgBlue"
                     android:textStyle="bold"
-                    android:textSize="10dp" />
+                    android:textSize="9dp" />
 
                 <TextView
                     android:id="@+id/days"
@@ -151,7 +151,7 @@
                     android:fontFamily="sans-serif-condensed"
                     android:textColor="@color/fgBlue"
                     android:textStyle="bold"
-                    android:textSize="10dp" />
+                    android:textSize="9dp" />
 
             </LinearLayout>
 

@@ -10,6 +10,7 @@
     android:previewLayout="@layout/single_person_widget"
     android:targetCellWidth="5"
     android:targetCellHeight="1"
+    android:resizeMode="horizontal"
     android:updatePeriodMillis="3600000"
     android:widgetCategory="home_screen"
     tools:targetApi="s" />

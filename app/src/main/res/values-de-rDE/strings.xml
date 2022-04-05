@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Alters-Rechner</string>
+    <string name="app_name">Wie alt?</string>
     <string name="age_years">Alter in Jahren:</string>
     <string name="age_months">Alter in Monaten:</string>
     <string name="age_weeks">Alter in Wochen:</string>
@@ -47,5 +47,6 @@
     <string name="na">Nicht Verfügbar</string>
     <string name="widget_pro">Benötigt Pro Version</string>
     <string name="no_data">Keine Person gefunden</string>
-    <string name="app_name_pro">Alters-Rechner Pro</string>
+    <string name="app_name_pro">Wie alt? Pro Version</string>
+    <string name="app_title">Alters-Rechner</string>
 </resources>
